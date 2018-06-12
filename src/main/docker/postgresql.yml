@@ -1,0 +1,11 @@
+version: '2'
+services:
+    t-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/T/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=T
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

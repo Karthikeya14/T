@@ -1,0 +1,14 @@
+version: '2'
+services:
+    t-app:
+        image: t
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://t-postgresql:5432/T
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    t-postgresql:
+        extends:
+            file: postgresql.yml
+            service: t-postgresql
